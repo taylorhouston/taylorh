@@ -1,0 +1,74 @@
+
+:root, ::backdrop {
+  --font-body: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+  Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --primary: hsl(200, 100%, 38%);
+  --body: #E0E0E0;
+  --off-body: #bebebe;
+  --overlay: rgba(0, 0, 0, 0.4);
+  --text: #1C1C1C;
+  --mid: #616161;
+  --highlight: #A20303;
+  font-family: var(--font-body);
+}
+
+.dark-theme:root, .dark-theme::backdrop {
+  --font-body: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+  Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --primary: 	hsl(200, 100%, 50%);
+  --body: #2c2c2c;
+  --off-body: #595959;
+  --overlay: rgba(0, 0, 0, 0.4);
+  --text: #dadada;
+  --mid: #838383;
+  --highlight: #d20000;
+  font-family: var(--font-body);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2.2rem;
+  color: var(--text);
+  margin: 0 .6rem;
+  background-color: var(--body);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  @media (min-width: 1024px) {
+    margin: 0;
+  }
+}
+
+.lock-body{
+  overflow: hidden;
+  height: 100%;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+input,
+button {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
