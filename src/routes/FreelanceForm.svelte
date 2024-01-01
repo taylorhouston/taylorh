@@ -1,6 +1,7 @@
 <script lang="ts">
   import { enhance } from "$app/forms"
-  import Button from "./Button.svelte"
+  import Button from "$lib/Button.svelte"
+  import Spinner from '$lib/Spinner.svelte';
 
   let websiteOptions: "new" | "maintenance" = "new"
   let loading: boolean = false
@@ -94,7 +95,8 @@
       </label>
     {/if}
 
-    <Button type="submit">send</Button>
+    <Button type="submit">
+      {#if loading} <Spinner />{:else}send{/if}</Button>
   </form>
 {/if}
 {#if submitted}
@@ -104,7 +106,7 @@
   </p>
 {/if}
 {#if loading}
-  <span>Loading</span>
+  <span><Spinner /></span>
 {/if}
 
 <style>

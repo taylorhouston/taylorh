@@ -2,7 +2,8 @@
   import ToggleSwitch from "./ToggleSwitch.svelte"
   import ToggleSwitchButton from "./ToggleSwitchButton.svelte"
   import Head from "../Head.svelte"
-  import Headline from "../../Headline.svelte"
+  import Headline from "$lib/Headline.svelte"
+  import { page } from '$app/stores';
 </script>
 
 <svelte:head>
@@ -14,6 +15,7 @@
     headline="Toggle Switch"
     reason="These we're popularized from mobile apps but I've never actually tried to
     make one from scratch so here we are starting with a checkbox based version:"
+    pathname={$page.url.pathname}
   >
     <ToggleSwitch />
     <p>

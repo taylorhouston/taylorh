@@ -2,7 +2,8 @@
   import Head from "../Head.svelte"
   import InsideComponent from "./InsideComponent.svelte"
   import OutsideComponent from "./OutsideComponent.svelte"
-  import Headline from "../../Headline.svelte"
+  import Headline from "$lib/Headline.svelte"
+  import { page } from '$app/stores';
 </script>
 
 <svelte:head>
@@ -13,6 +14,7 @@
   <Head
     headline="has pseudo classes"
     reason="These new pseudo class :has() are said to be able to change the way we write CSS. I had to take the time to investigate them."
+    pathname={$page.url.pathname}
   >
     <OutsideComponent>
       <InsideComponent />
@@ -41,8 +43,5 @@
     justify-content: center;
     align-items: center;
     flex: 0.6;
-  }
-  h3 {
-    margin: 0;
   }
 </style>

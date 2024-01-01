@@ -1,11 +1,14 @@
 <script>
   import Head from "../Head.svelte"
   import Modal from "./Modal.svelte"
+  import {page} from '$app/stores'
+  console.log('wee',$page)
 </script>
 
 <Head
   headline="Dialog Element"
   reason="I've made many popups, modals, dialogs over the years but with dialog being a recent addition to the HTML spec, hadn't really used it. Lets see what it offers."
+  pathname={$page.url.pathname}
 >
   <Modal />
   <h3>Conclusion</h3>

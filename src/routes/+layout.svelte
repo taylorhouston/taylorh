@@ -1,7 +1,7 @@
 <script lang="ts">
   import "./styles.css"
   import MenuNav from "./MenuNav.svelte"
-  import Drawer from "./Drawer.svelte"
+  import Drawer from "$lib/Drawer.svelte"
   import { getContext, setContext } from "svelte"
   import { type Writable, writable } from "svelte/store"
   import ListView from "./ListView.svelte"

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Button from "../../Button.svelte"
+  import Button from "$lib/Button.svelte"
   import X from "../../X.svelte"
 
   let modal: HTMLDialogElement

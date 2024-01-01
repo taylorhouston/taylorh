@@ -1,18 +1,12 @@
 <script lang="ts">
-  import Limiter from "./Limiter.svelte"
-
   export let id: string | undefined = undefined
   export let headline: string
-  export let paragraph: string | undefined = undefined
 </script>
 
 <div class="back-splash" {id}>
   <div class="back-splash__side back-splash__left"></div>
   <div class="back-splash__top">
     <h1>{headline}</h1>
-    {#if paragraph}
-      <Limiter>{paragraph}</Limiter>
-    {/if}
   </div>
   <div class="back-splash__side back-splash__right"></div>
 </div>

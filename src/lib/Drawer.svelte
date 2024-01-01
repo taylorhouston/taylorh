@@ -1,7 +1,7 @@
 <script lang="ts">
   import { getContext } from "svelte"
   import { fade } from "svelte/transition"
-  import { activateModal, type ActivateModal } from "./contexts"
+  import { activateModal, type ActivateModal } from "../routes/contexts"
 
   const { active } = getContext<ActivateModal>(activateModal)
 

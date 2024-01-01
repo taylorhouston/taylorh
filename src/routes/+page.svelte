@@ -2,12 +2,12 @@
   import BackendIcon from "./BackendIcon.svelte"
   import FrontendIcon from "./FrontendIcon.svelte"
   import UXDesignIcon from "./UXDesignIcon.svelte"
-  import BackSplash from "./BackSplash.svelte"
+  import BackSplash from "$lib/BackSplash.svelte"
   import FlipBox from "./FlipBox.svelte"
   import Accordion from "./Accordion.svelte"
   import FreelanceForm from "./FreelanceForm.svelte"
   import Hero from "./Hero.svelte"
-  import Button from "./Button.svelte"
+  import Button from "$lib/Button.svelte"
   import { experimentData } from "./experimentData"
   import GitHubIcon from "./GitHubIcon.svelte"
   const experiments = experimentData[0].list
@@ -20,11 +20,14 @@
 
 <section>
   <h1>Front-end focused Web Developer</h1>
-  <p>I simplify using UX, write beautiful code, and love doing it</p>
+  <p>
+    I started as a solo Web Developer for a small business then progressively
+    became more focused on the front-end side of the web including UX,
+    accessibility and vector graphics.
+  </p>
   <Hero />
   <BackSplash
-    headline="Hi, I'm Taylor. Its nice to meet you"
-    paragraph="I started as a solo Web Developer for a small business. As a result, I learned how to deal with all the parts of making a website."
+    headline="Tools I Love"
   >
     <div class="grid">
       <div>
