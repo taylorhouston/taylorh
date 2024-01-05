@@ -7,7 +7,13 @@ export interface ListData {
 export const experimentData: ListData[] = [
   {
     label: "experiments",
+
     list: [
+      {
+        href: "/experiments/json-viewer",
+        label: "json viewer",
+        dateCreated: "1-4-2024",
+      },
       {
         href: "/experiments/has-pseudo-class",
         label: "has pseudo class",

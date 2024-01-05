@@ -2,6 +2,7 @@
   import { enhance } from "$app/forms"
   import Button from "$lib/Button.svelte"
   import Spinner from '$lib/Spinner.svelte';
+  import TextField from '$lib/TextField.svelte';
 
   let websiteOptions: "new" | "maintenance" = "new"
   let loading: boolean = false
@@ -58,14 +59,11 @@
         type="text"
       />
     </label>
-    <label class="text-label">
-      Project Description
-      <textarea
-        class={`text-label ${errors?.projectDesc && "error"}`}
-        rows="4"
-        name="projectDesc"
-      ></textarea>
-    </label>
+    <TextField
+      label="Project Description"
+      name="projectDesc"
+      errors={errors}
+    />
     <label class="radio-label">
       <input
         name="websiteOptions"
