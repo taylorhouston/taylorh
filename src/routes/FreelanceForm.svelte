@@ -43,6 +43,17 @@
     <label class="text-label">
       Email
       <input
+        class={`text-label ${errors?.email2 && "error"}`}
+        name="email2"
+        type="text"
+      />
+      {#if errors?.email}
+        <span class="error">{errors.email}</span>
+      {/if}
+    </label>
+    <label class="text-label yep">
+      Email
+      <input
         class={`text-label ${errors?.email && "error"}`}
         name="email"
         type="text"
@@ -116,6 +127,8 @@
     display: flex;
     flex-direction: column;
   }
+  .yep{display: none}
+
 
   label {
     padding: 1rem 0;

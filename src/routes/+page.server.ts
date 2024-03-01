@@ -13,6 +13,7 @@ export const actions = {
     const data = await request.formData()
     const name = data.get("name") as string
     const email = data.get("email") as string
+    const email2 = data.get("email2") as string
     const company = data.get("company") as string
     const projectDesc = data.get("projectDesc") as string
     const url = data.get("url") as string
@@ -28,9 +29,12 @@ export const actions = {
       websiteOptions?: string
       url?: string
     } = {}
-    if (!validator.isEmail(email)) {
+    if(!validator.isEmail(email2)){
       hasError = true
       errorObject.email = "invalid email"
+    }
+    if (!validator.isEmpty(email)) {
+      hasError = true
     }
 
     if (validator.isEmpty(name)) {
@@ -57,7 +61,9 @@ export const actions = {
         errorObject.websiteOptions = "select a website option"
       }
     }
-
+    if (hasError) {
+      return fail(400, errorObject)
+    }
     const resend = new Resend(RESEND_API_KEY)
     const { error } = await resend.emails.send({
       from: SENDER_EMAIL,
@@ -67,7 +73,7 @@ export const actions = {
       }`,
       html: `<div>Company: </div>
       <div>${company}</div>
-      <div>Email From: ${email}</div>
+      <div>Email From: ${email2}</div>
       <div>Message:</div>
       <div>${projectDesc}</div>
       <div>New or Maintaining old site? ${websiteOptions}</div>
@@ -81,9 +87,7 @@ export const actions = {
       `,
     })
     console.log(error)
-    if (hasError) {
-      return fail(400, errorObject)
-    }
+
     return { status: "success" }
   },
 } satisfies Actions
