@@ -1,6 +1,6 @@
 <script lang="ts">
   export let isOpen: boolean = true
-  export let onClick: () => void = undefined
+  export let onClick: (() => void) | undefined = undefined
 </script>
 
 <button class:isOpen on:click={onClick}>
@@ -12,8 +12,8 @@
   button {
     position: relative;
     cursor: pointer;
-    width: 4rem;
-    height: 4rem;
+    width: var(--30px);
+    height: var(--30px);
     padding: 0;
     background-color: transparent;
     border: 0;
@@ -21,11 +21,10 @@
   }
 
   span {
-    width: 3rem;
+    width: 5px;
     border-radius: 5px;
-    height: 0.6rem;
-    background-color: var(--text);
-
+    height: var(--20px);
+    background-color: var(--color-text);
     top: 0;
     bottom: 0;
     margin: auto;

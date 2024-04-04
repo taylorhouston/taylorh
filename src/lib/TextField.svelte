@@ -1,35 +1,74 @@
 <script lang="ts">
-	export let name: string
-	export let label: string
+  export let name: string
+  export let label: string
+  export let value: string = ''
+  export let errors: { [key: string]: string }
+  export let type: 'text' | 'number' | 'password' | 'textarea' | 'email' = 'text'
+  export let rows: number | undefined = undefined
 </script>
-<label class="text-label">
-	{label}
-	<textarea
-		rows="6"
-		name={name}
-	></textarea>
+
+<label>
+  {#if type === 'textarea'}
+    <textarea {value} placeholder=" " {rows} {name}></textarea>
+  {:else}
+    <input {name} {value} placeholder=" " {type} />
+  {/if}<span class="label-container">{label}</span>
+  {#if errors?.[name]}
+    <span class="error">{errors[name]}</span>
+  {/if}
 </label>
+
 <style>
-    .text-label {
-        display: flex;
-        flex-direction: column;
-    }
+  label {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    position: relative;
+  }
 
-    label {
-        padding: 1rem 0;
-    }
+  .label-container {
+    padding: 5px;
+    position: absolute;
+    top: var(--16px);
+    left: 10px;
+    cursor: text;
+    background-color: var(--color-body);
+    scale: 1;
+    transition: transform 0.3s;
+  }
 
-    textarea {
-        margin-top: 0.5rem;
-        color: inherit;
-        background-color: var(--body);
-        border: 0.2rem solid var(--primary);
-        padding: 0.6rem 1.2rem;
-        font-family: inherit;
-        width: 100%;
-        font-size: inherit;
-        outline-offset: 0.4rem;
-        border-radius: 5px;
-    }
+  input:focus + .label-container,
+  input:not(:placeholder-shown) + .label-container,
+  textarea:focus + .label-container,
+  textarea:not(:placeholder-shown) + .label-container {
+    transform: translateY(calc(var(--22px) * -1));
+    scale: 0.9;
+  }
 
+  input[type='text'],
+  input[type='number'],
+  input[type='password'],
+  input[type='email'] {
+    height: var(--40px);
+  }
+
+  textarea,
+  input {
+    color: inherit;
+    background-color: var(--color-body);
+    border: 2px solid var(--color-text);
+    padding: 0.6rem;
+    font-family: inherit;
+    width: 100%;
+    font-size: inherit;
+    outline-offset: 4px;
+    border-radius: var(--theme-border-radius);
+  }
+
+  textarea:focus,
+  input:focus {
+    outline-width: 2px;
+    outline-style: solid;
+    outline-color: var(--color-outline);
+  }
 </style>

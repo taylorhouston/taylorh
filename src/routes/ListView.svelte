@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { ListData } from "./experimentData"
+  import type { ListData } from './experimentData'
   export let onClose: () => void
   export let items: ListData[] = []
 </script>
@@ -7,7 +7,7 @@
 <ul>
   {#each items as item}
     <li>
-      {#if item.hasOwnProperty("href")}
+      {#if item.hasOwnProperty('href')}
         <a on:click={onClose} href={item.href}>{item.label}</a>
       {:else}
         <h3>{item.label}</h3>
@@ -29,7 +29,7 @@
     padding: 0.5rem;
     display: flex;
     align-items: center;
-    height: 4rem;
+    height: var(--40px);
   }
   a {
     vertical-align: center;

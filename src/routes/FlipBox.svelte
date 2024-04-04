@@ -59,7 +59,7 @@
 
   .back {
     background-color: var(--mid);
-    color: var(--body);
+    color: var(--color-body);
     transform: rotateY(180deg);
     flex-direction: column;
     padding: 1rem;

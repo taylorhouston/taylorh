@@ -17,6 +17,6 @@
   h2,
   h3,
   h4 {
-    font-size: 2.4rem;
+    font-size: var(--24px);
   }
 </style>

@@ -14,7 +14,7 @@
   polyline,
   line {
     fill: none;
-    stroke: var(--primary);
-    stroke-width: 0.4rem;
+    stroke: var(--color-accent);
+    stroke-width: 4px;
   }
 </style>

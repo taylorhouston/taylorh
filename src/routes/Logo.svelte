@@ -6,7 +6,7 @@
 
 <style>
   path {
-    fill: var(--text);
+    fill: var(--color-text);
     fill-rule: evenodd;
     stroke-width: 0;
   }

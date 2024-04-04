@@ -37,12 +37,12 @@
   .back-splash__top {
     width: 90%;
     background-color: var(--off-body);
-    color: var(--text);
+    color: var(--color-text);
     padding: 0 0.6rem 10rem;
   }
 
   .back-splash__white {
-    background-color: var(--body);
+    background-color: var(--color-body);
     width: 100%;
     left: 0;
     right: 0;
@@ -60,8 +60,8 @@
 
   h1 {
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 24px var(--10px);
     margin: 0;
-    font-size: 2.8rem;
+    font-size: var(--28px);
   }
 </style>

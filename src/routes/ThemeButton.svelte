@@ -1,27 +1,27 @@
 <script lang="ts">
-  import { getContext } from "svelte"
-  import type { Theme } from "./contexts"
-  const { theme } = getContext<Theme>("theme")
+  import { getContext } from 'svelte'
+  import type { Theme } from './contexts'
+  const { theme } = getContext<Theme>('theme')
   function handleThemeClick() {
     const root = document.documentElement.classList
     if (root) {
-      if (root.contains("light-theme")) {
-        root.add("dark-theme")
-        root.remove("light-theme")
-        $theme = "dark-theme"
-        localStorage.setItem("theme", "dark-theme")
+      if (root.contains('light-theme')) {
+        root.add('dark-theme')
+        root.remove('light-theme')
+        $theme = 'dark-theme'
+        localStorage.setItem('theme', 'dark-theme')
       } else {
-        root.add("light-theme")
-        root.remove("dark-theme")
-        $theme = "light-theme"
-        localStorage.setItem("theme", "light-theme")
+        root.add('light-theme')
+        root.remove('dark-theme')
+        $theme = 'light-theme'
+        localStorage.setItem('theme', 'light-theme')
       }
     }
   }
 </script>
 
 <button on:click={handleThemeClick}>
-  {#if $theme === "dark-theme"}
+  {#if $theme === 'dark-theme'}
     <svg viewBox="0 0 38.58 38.58">
       <circle class="cls-2" cx="19.14" cy="19.29" r="13.2" />
       <polyline class="cls-1" points="15.08 4.06 19.14 0 23.2 4.06" />
@@ -33,7 +33,7 @@
       <polyline class="cls-1" points="33.04 27.09 33.04 32.83 27.3 32.83" />
       <polyline class="cls-1" points="5.55 11.5 5.55 5.75 11.29 5.75" />
     </svg>
-  {:else if $theme === "light-theme"}
+  {:else if $theme === 'light-theme'}
     <svg viewBox="0 0 30.88 35.15">
       <path
         class="moon"
@@ -45,30 +45,30 @@
 
 <style>
   svg {
-    height: 2.5rem;
+    height: var(--25px);
   }
   button {
     display: flex;
-    padding: 1rem;
+    padding: 10px;
     align-items: center;
     justify-content: center;
     background: transparent;
-    border: 0.1rem solid var(--text);
-    height: 4rem;
-    width: 5rem;
-    margin-right: 1rem;
+    border: 1px solid var(--color-text);
+    height: var(--40px);
+    width: var(--50px);
+    margin-right: 10px;
     border-radius: 0.5rem;
   }
   .cls-1 {
     fill-rule: evenodd;
   }
   .moon {
-    fill: var(--text);
+    fill: var(--color-text);
     stroke-width: 0;
   }
   .cls-1,
   .cls-2 {
-    fill: var(--text);
+    fill: var(--color-text);
     stroke-width: 0;
   }
 </style>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let type: "button" | "submit" = "button"
+  export let type: 'button' | 'submit' = 'button'
   export let href: string | undefined = undefined
   export let label: string | undefined = undefined
   export let disabled: boolean = false
@@ -24,18 +24,19 @@
     text-decoration: none;
   }
   button {
-    margin: 1rem 0;
+    margin: 10px 0;
     display: flex;
     align-items: center;
     gap: 1rem;
     text-decoration: none;
     padding: 1rem 2rem;
-    height: 5rem;
+    height: 3rem;
     border: 0;
     font-size: inherit;
     outline-offset: 0.3rem;
-    color: var(--body);
-    background-color: var(--primary);
+    outline-color: var(--color-accent);
+    color: var(--color-body);
+    background-color: var(--color-accent);
     border-radius: 5px;
   }
 
@@ -43,8 +44,8 @@
     cursor: pointer;
   }
 
-  button[disabled="true"] {
-    background-color: var(--text);
+  button[disabled='true'] {
+    background-color: var(--color-text);
     pointer-events: none;
   }
 </style>

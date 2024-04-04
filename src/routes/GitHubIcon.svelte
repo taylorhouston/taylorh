@@ -8,9 +8,9 @@
 
 <style>
   path {
-    fill: var(--body);
+    fill: var(--color-body);
   }
   svg {
-    width: 3rem;
+    width: var(--30px);
   }
 </style>

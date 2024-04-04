@@ -24,7 +24,7 @@
 	}
 
 	li.syntax{
-			color: var(--primary);
+			color: var(--color-accent);
 			margin-left: -1.5rem;
 	}
 </style>

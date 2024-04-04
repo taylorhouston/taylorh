@@ -2,38 +2,53 @@
 :root, ::backdrop {
   --font-body: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
   Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --primary: hsl(200, 100%, 38%);
-  --body: #E0E0E0;
+  --color-accent: hsl(200, 100%, 38%);
+  --color-body: #E0E0E0;
   --off-body: #bebebe;
   --overlay: rgba(0, 0, 0, 0.4);
-  --text: #1C1C1C;
+  --color-text: #1C1C1C;
+  --color-outline: var(--color-accent);
   --mid: #616161;
-  --highlight: #A20303;
+  --color-problem: #A20303;
   font-family: var(--font-body);
+  --theme-border-radius: 5px;
+  --10px: .625rem;
+  --12px: .75rem;
+  --14px: 0.875rem;
+  --15px: 0.9375rem;
+  --16px: 1rem;
+  --17px: 1.0625rem;
+  --18px: 1.125rem;
+  --19px: 1.1875rem;
+  --20px: 1.25rem;
+  --21px: 1.3125rem;
+  --22px: 1.375rem;
+  --23px: 1.4375rem;
+  --25px: 1.5625rem;
+  --28px: 1.75rem;
+  --30px: 1.875rem;
+  --40px: 2.5rem;
+  --50px: 3.125rem
 }
 
 .dark-theme:root, .dark-theme::backdrop {
   --font-body: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
   Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --primary: 	hsl(200, 100%, 50%);
-  --body: #2c2c2c;
+  --color-accent: hsl(200, 100%, 50%);
+  --color-body: #2c2c2c;
   --off-body: #595959;
   --overlay: rgba(0, 0, 0, 0.4);
-  --text: #dadada;
+  --color-text: #dadada;
   --mid: #838383;
   --highlight: #d20000;
   font-family: var(--font-body);
 }
 
-html {
-  font-size: 62.5%;
-}
 
 body {
-  font-size: 2.2rem;
-  color: var(--text);
+  color: var(--color-text);
   margin: 0 .6rem;
-  background-color: var(--body);
+  background-color: var(--color-body);
   font-family: var(--font-body);
   overflow-x: hidden;
   @media (min-width: 1024px) {

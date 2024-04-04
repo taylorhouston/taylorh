@@ -268,7 +268,7 @@
   .experiment-link {
     padding: 1rem;
     display: flex;
-    color: var(--text);
+    color: var(--color-text);
     text-decoration: none;
   }
 
@@ -304,7 +304,7 @@
   }
 
   h4 {
-    color: var(--primary);
+    color: var(--color-accent);
     margin-top: 2rem;
   }
 </style>

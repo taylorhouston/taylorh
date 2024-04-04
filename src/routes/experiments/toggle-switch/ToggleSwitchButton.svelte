@@ -23,32 +23,32 @@
 
   .label {
     padding-right: 0.5rem;
-    color: var(--text);
+    color: var(--color-text);
   }
 
   .slider {
     display: block;
-    border-radius: 1.5rem;
-    height: 3rem;
-    width: 3rem;
-    background-color: var(--body);
+    border-radius: 100%;
+    height: var(--30px);
+    width: var(--30px);
+    background-color: var(--color-body);
     transition: transform 0.5s;
-    box-shadow: 0.1rem 0.1rem 0.2rem var(--text);
+    box-shadow: 0.1rem 0.1rem 0.2rem var(--color-text);
   }
 
   .switch {
     display: block;
-    border: 0.1rem solid var(--text);
+    border: 1px solid var(--color-text);
     background-color: var(--off-body);
     width: 70px;
-    padding: 0.4rem;
+    padding: 4px;
     height: 40px;
     border-radius: 2rem;
     transition: background-color 0.5s;
   }
 
   .toggled .switch {
-    background-color: var(--primary);
+    background-color: var(--color-accent);
   }
 
   .toggled .slider {

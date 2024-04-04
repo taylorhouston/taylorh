@@ -1,50 +1,47 @@
 <script lang="ts">
-  import "./styles.css"
-  import MenuNav from "./MenuNav.svelte"
-  import Drawer from "$lib/Drawer.svelte"
-  import { getContext, setContext } from "svelte"
-  import { type Writable, writable } from "svelte/store"
-  import ListView from "./ListView.svelte"
-  import { experimentData } from "./experimentData"
-  import { browser } from "$app/environment"
-  import { activateModal, type ActivateModal, type Theme } from "./contexts"
-  setContext<{ theme: Writable<string> }>("theme", { theme: writable("") })
-  setContext<ActivateModal>("activate-modal", {
-    active: writable(false),
+  import './styles.css'
+  import MenuNav from './MenuNav.svelte'
+  import Drawer from '$lib/Drawer.svelte'
+  import { getContext, setContext } from 'svelte'
+  import { type Writable, writable } from 'svelte/store'
+  import ListView from './ListView.svelte'
+  import { experimentData } from './experimentData'
+  import { browser } from '$app/environment'
+  import { activateModal, type ActivateModal, type Theme } from './contexts'
+  setContext<{ theme: Writable<string> }>('theme', { theme: writable('') })
+  setContext<ActivateModal>('activate-modal', {
+    active: writable(false)
   })
   const { active } = getContext<ActivateModal>(activateModal)
-  const { theme } = getContext<Theme>("theme")
+  const { theme } = getContext<Theme>('theme')
 
   if (browser) {
-    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)")
-    $theme =
-      localStorage.getItem("theme") ?? prefersDarkMode.matches
-        ? "dark-theme"
-        : "light-theme"
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
+    $theme = localStorage.getItem('theme') ?? prefersDarkMode.matches ? 'dark-theme' : 'light-theme'
 
     const updateThemeOnChange = (e: MediaQueryListEvent) => {
-      if (localStorage.getItem("theme")) {
+      if (localStorage.getItem('theme')) {
         return
       }
-      $theme = e.matches ? "dark-theme" : "light-theme"
-      document.documentElement.classList.remove("dark-theme")
+      $theme = e.matches ? 'dark-theme' : 'light-theme'
+      document.documentElement.classList.remove('dark-theme')
       document.documentElement.classList.add($theme)
     }
-    prefersDarkMode.addEventListener("change", updateThemeOnChange)
+    prefersDarkMode.addEventListener('change', updateThemeOnChange)
   }
 </script>
 
 <svelte:head>
   <script lang="ts">
-    let themeMode = ""
-    if (localStorage.getItem("theme")) {
-      themeMode = localStorage.getItem("theme")
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      themeMode = "dark-theme"
-      $theme = "dark-theme"
+    let themeMode = ''
+    if (localStorage.getItem('theme')) {
+      themeMode = localStorage.getItem('theme')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      themeMode = 'dark-theme'
+      $theme = 'dark-theme'
     } else {
-      themeMode = "light-theme"
-      $theme = "dark-theme"
+      themeMode = 'light-theme'
+      $theme = 'dark-theme'
     }
     if (document) {
       document.documentElement.classList.add(themeMode)
@@ -70,11 +67,11 @@
 
 <style>
   .app {
-    background-color: var(--body);
+    background-color: var(--color-body);
   }
   header {
     position: sticky;
-    background-color: var(--body);
+    background-color: var(--color-body);
     z-index: 2;
     top: 0;
   }
@@ -83,7 +80,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--text);
+    color: var(--color-text);
     height: 6rem;
   }
 

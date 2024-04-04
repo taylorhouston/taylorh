@@ -40,20 +40,20 @@
 
   polygon {
     fill: none;
-    stroke: var(--primary);
+    stroke: var(--color-accent);
     stroke-miterlimit: 10;
   }
 
   polygon.filled {
-    fill: var(--primary);
+    fill: var(--color-accent);
   }
 
   line {
-    stroke: var(--primary);
+    stroke: var(--color-accent);
     stroke-miterlimit: 10;
   }
 
   rect {
-    fill: var(--primary);
+    fill: var(--color-accent);
   }
 </style>

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Button from "$lib/Button.svelte"
-  import X from "../../X.svelte"
+  import Button from '$lib/Button.svelte'
+  import X from '../../X.svelte'
 
   let modal: HTMLDialogElement
   function handleModalState() {
@@ -22,10 +22,10 @@
 
 <style>
   dialog {
-    color: var(--text);
+    color: var(--color-text);
     box-shadow: 2px 2px 5px var(--overlay);
     width: 50%;
-    background: var(--body);
+    background: var(--color-body);
     border: 0;
     border-radius: 0.5rem;
   }

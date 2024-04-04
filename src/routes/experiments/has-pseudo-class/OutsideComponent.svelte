@@ -9,7 +9,7 @@
 <style>
   /* .outer contains .happy-day */
   .outer:has(.happy-day) {
-    border: var(--text) 0.1rem solid;
+    border: var(--color-text) 0.1rem solid;
   }
   /* .outer has sibling */
   .outer:has(+ .outer-sibling) {
@@ -25,6 +25,6 @@
   }
   /* has .inner AND .inner-2, does not apply as result, no inner-2 */
   .outer-sibling:has(.inner):has(.inner-2) {
-    border: var(--text) 0.1rem solid;
+    border: var(--color-text) 0.1rem solid;
   }
 </style>

@@ -45,7 +45,7 @@
     cursor: pointer;
     background: transparent;
     border: 0;
-    color: var(--text);
+    color: var(--color-text);
   }
 
   .accordion-content {

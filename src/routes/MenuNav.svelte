@@ -1,21 +1,21 @@
 <script lang="ts">
-  import { getContext } from "svelte"
-  import Logo from "./Logo.svelte"
-  import ThemeButton from "./ThemeButton.svelte"
-  import { browser } from "$app/environment"
-  import { activateModal, type ActivateModal } from "./contexts"
+  import { getContext } from 'svelte'
+  import Logo from './Logo.svelte'
+  import ThemeButton from './ThemeButton.svelte'
+  import { browser } from '$app/environment'
+  import { activateModal, type ActivateModal } from './contexts'
   const { active } = getContext<ActivateModal>(activateModal)
   function handleClick() {
     $active = !$active
   }
-  let theme = ""
+  let theme = ''
   if (browser) {
-    if (localStorage.getItem("theme") != null) {
-      theme = localStorage.getItem("theme") as string
+    if (localStorage.getItem('theme') != null) {
+      theme = localStorage.getItem('theme') as string
     } else {
-      theme = document.documentElement.classList.contains("light-theme")
-        ? "light-theme"
-        : "dark-theme"
+      theme = document.documentElement.classList.contains('light-theme')
+        ? 'light-theme'
+        : 'dark-theme'
     }
   }
 </script>
@@ -60,15 +60,15 @@
 
   a {
     text-decoration: none;
-    color: var(--primary);
+    color: var(--color-accent);
 
     &:visited {
-      color: var(--primary);
+      color: var(--color-accent);
     }
   }
 
   .logo-container {
-    width: 5rem;
+    width: var(--50px);
     margin-left: 1rem;
     line-height: 0;
   }
@@ -78,12 +78,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 5px;
 
     & > span {
-      background-color: var(--text);
-      width: 3rem;
-      height: 0.5rem;
+      background-color: var(--color-text);
+      width: var(--30px);
+      height: 5px;
       border-radius: 0.5rem;
     }
   }
